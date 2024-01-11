@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
 
-namespace OrderDishes
+namespace OrderDishesForUpdate
 {
     internal class Program
     {
@@ -26,10 +26,18 @@ namespace OrderDishes
         public string Size { get; set; }
     }
 
+    public delegate void OrderEventHandler(Customer customer, OrderEventArgs e);
+
 
     public class Customer
     {
-        public event EventHandler Order;
+        private OrderEventHandler orderEventHandler;
+
+        public event OrderEventHandler Order
+        {
+            add { this.orderEventHandler += value; }
+            remove { this.orderEventHandler -= value; }
+        }
         public double Bill { get; set; }
 
         public void PayBill()
@@ -42,12 +50,12 @@ namespace OrderDishes
             System.Console.WriteLine("It's action!");
             Thread.Sleep(1000);
 
-            if (this.Order != null)
+            if (this.orderEventHandler != null)
             {
                 OrderEventArgs e = new OrderEventArgs();
                 e.DishName = "Water";
                 e.Size = "large";
-                Order(this, e);
+                orderEventHandler(this, e);
                 PayBill();
                 System.Console.ReadLine();
             }
@@ -57,14 +65,11 @@ namespace OrderDishes
     public class Waiter 
     {
 
-        public void Action(object c, EventArgs e)
+        public void Action(Customer customer, OrderEventArgs e)
         {
-            Customer customer  = c as Customer;
-            OrderEventArgs einfo = e as OrderEventArgs;
-
             double bill = 10;
-            Console.WriteLine("Dish is {0}, Size is {1}.", einfo.DishName, einfo.Size);
-            switch (einfo.Size)
+            Console.WriteLine("Dish is {0}, Size is {1}.",e.DishName,e.Size);
+            switch (e.Size)
             {
                 case "large":
                     bill *= 1.5;

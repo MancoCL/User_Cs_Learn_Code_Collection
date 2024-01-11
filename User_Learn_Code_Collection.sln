@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1.Product_Factory_For_Inter
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2.OrderDishes", "OrderDishes\2.OrderDishes.csproj", "{0741F717-4FB6-42D4-B1CE-A4D499EFBD2C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3.OrderDishesForUpdate", "OrderDishesForUpdate\3.OrderDishesForUpdate.csproj", "{46976777-AF06-457B-B4EB-F90E01408684}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{0741F717-4FB6-42D4-B1CE-A4D499EFBD2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0741F717-4FB6-42D4-B1CE-A4D499EFBD2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0741F717-4FB6-42D4-B1CE-A4D499EFBD2C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46976777-AF06-457B-B4EB-F90E01408684}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46976777-AF06-457B-B4EB-F90E01408684}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46976777-AF06-457B-B4EB-F90E01408684}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46976777-AF06-457B-B4EB-F90E01408684}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
